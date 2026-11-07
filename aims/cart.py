@@ -30,8 +30,11 @@ class Cart:
         print("***********************CART***********************")
         print("Ordered Items:")
 
-        for index, dvd in enumerate(self.items, start=1):
-            print(f"{index}. {dvd}")
+        if not self.items:
+            print("The cart is empty")
+        else:
+            for index, dvd in enumerate(self.items, start=1):
+                print(f"{index}. {dvd}")
 
         print(f"Total cost: {self.total_cost():.2f} $")
         print("***************************************************")
